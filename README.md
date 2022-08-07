@@ -9,4 +9,4 @@ Read Data from Rest API call and store it into Java Object
 * Sample Internet Rest Call :
 https://dummy.restapiexample.com/api/v1/employees
 
-* If you wish to change the rest call, add the rest api in api.txt file
+* If you wish to change the rest call, Go to folder app add the change the rest api in api.txt file
