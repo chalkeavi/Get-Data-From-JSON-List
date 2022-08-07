@@ -7,6 +7,10 @@ import java.net.URL;
 import java.text.ParseException;
 import java.util.List;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.text.ParseException;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class GetDataFromServer {
@@ -18,8 +22,8 @@ public class GetDataFromServer {
 	public static String getJsonDataFromServer()
 			throws IOException, ParseException, java.text.ParseException, org.json.simple.parser.ParseException {
 
-		String REST_URL = "https://dummy.restapiexample.com/api/v1/employees";
-		URL url = new URL(REST_URL);
+		//String REST_URL = "https://dummy.restapiexample.com/api/v1/employees";
+		URL url = new URL(readFile());
 
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
@@ -61,6 +65,9 @@ public class GetDataFromServer {
 		System.out.println("The File Generated Successfully");
 	}
 
+public static String readFile() throws IOException {
+		return new String(Files.readAllBytes(Paths.get("./app/api.txt")));		
+	}
 }
 
 class Sample {
